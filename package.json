@@ -1,0 +1,40 @@
+{
+  "name": "solid-lamp",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "formik": "^2.2.9",
+    "next": "11.1.0",
+    "next-auth": "^3.29.0",
+    "next-images": "^1.8.1",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "react-icons": "^4.2.0",
+    "styled-components": "^5.3.1"
+  },
+  "devDependencies": {
+    "@types/next-auth": "^3.15.0",
+    "@types/react": "17.0.19",
+    "@types/react-dom": "^17.0.9",
+    "@types/styled-components": "^5.1.14",
+    "eslint": "7.32.0",
+    "eslint-config-next": "11.1.0",
+    "typescript": "4.4.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leoncarey/solid-lamp.git"
+  },
+  "author": "Leonardo Carey",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/leoncarey/solid-lamp/issues"
+  },
+  "homepage": "https://github.com/leoncarey/solid-lamp#readme"
+}
