@@ -6,7 +6,9 @@ import Home from '../src/pages/Home'
 import LoginPage from './login'
 
 const HomePage: NextPage = () => {
-  const [session] = useSession()
+  const [session, loading] = useSession()
+
+  if (typeof window !== 'undefined' && loading) return null
 
   if (session) {
     return (

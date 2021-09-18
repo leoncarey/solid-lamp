@@ -7,7 +7,7 @@ import theme from '../src/styles/theme'
 
 import '../src/styles/fonts.css'
 
-const App: React.FunctionComponent<AppProps> = ({ Component, pageProps: { session, ...pageProps } }) => {
+const App: React.FunctionComponent<AppProps> = ({ Component, pageProps }) => {
   return (
     <Provider
       options={{
@@ -25,7 +25,7 @@ const App: React.FunctionComponent<AppProps> = ({ Component, pageProps: { sessio
         // windows / tabs will be updated to reflect the user is signed out.
         keepAlive: 0
       }}
-      session={session}
+      session={pageProps.session}
     >
       <ThemeProvider theme={theme}>
         <GlobalStyle />
