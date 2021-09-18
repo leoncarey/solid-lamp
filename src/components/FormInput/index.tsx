@@ -2,8 +2,8 @@ import React, { useState } from 'react'
 import { useField } from 'formik'
 
 import {
-    InputWrapper,
-    InputField
+  InputWrapper,
+  InputField
 } from './styles'
 
 type InputFieldProps = {
@@ -18,23 +18,23 @@ type InputFieldProps = {
     onBlur?: (e: React.FocusEvent<any>) => void
 }
 
-const FormControl: React.FC<InputFieldProps> = ({labelText, onChange, onBlur, onFocus, ...props}) => {
-    const [field, meta, helpers] = useField(props)
-    
-    const {value} = meta
-    let [focused, setFocused] = useState(false)
+const FormControl: React.FC<InputFieldProps> = ({ labelText, onBlur, onFocus, ...props }) => {
+  const [field, meta] = useField(props)
 
-    const handleBlur = (e) => {
-        setFocused(false)
-        onBlur(e)
-    }
+  const { value } = meta
+  const [focused, setFocused] = useState(false)
 
-    const handleFocus = (e) => {
-        setFocused(true)
-        onFocus && onFocus(e)
-    }
+  const handleBlur = (e: React.FocusEvent<any>) => {
+    setFocused(false)
+    onBlur(e)
+  }
 
-    return (
+  const handleFocus = (e: React.FocusEvent<any>) => {
+    setFocused(true)
+    onFocus && onFocus(e)
+  }
+
+  return (
         <InputWrapper
             className={focused || value !== '' ? 'field-focused' : ''}>
             {
@@ -50,11 +50,12 @@ const FormControl: React.FC<InputFieldProps> = ({labelText, onChange, onBlur, on
             />
 
             {
-                meta.touched && meta.error ?
-                <div id="feedback">{meta.error}</div> : null
+                meta.touched && meta.error
+                  ? <div id="feedback">{meta.error}</div>
+                  : null
             }
         </InputWrapper>
-    )
+  )
 }
 
 export default FormControl

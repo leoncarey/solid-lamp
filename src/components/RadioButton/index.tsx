@@ -1,8 +1,8 @@
 import React from 'react'
 
 import {
-    RadioWrapper,
-    RadioInput
+  RadioWrapper,
+  RadioInput
 } from './styles'
 
 type RadioButtonProps = {
@@ -13,13 +13,13 @@ type RadioButtonProps = {
     value?: string,
 }
 
-const RadioButton: React.FC<RadioButtonProps> = ({labelText, id, ...props}) => {
-    return (
+const RadioButton: React.FC<RadioButtonProps> = ({ labelText, id, ...props }) => {
+  return (
         <RadioWrapper>
             <RadioInput type="radio" id={id} {...props} />
             <label htmlFor={id}>{labelText}</label>
         </RadioWrapper>
-    )
+  )
 }
 
 export default RadioButton

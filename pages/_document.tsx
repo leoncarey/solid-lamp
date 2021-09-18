@@ -1,17 +1,21 @@
-import Document from 'next/document'
+import Document, { DocumentContext } from 'next/document'
 import { ServerStyleSheet } from 'styled-components'
 
 export default class AppDocument extends Document {
-  static async getInitialProps(ctx) {
+  static async getInitialProps(ctx: DocumentContext):
+  Promise<{
+    styles: JSX.Element;
+    html: string;
+    head?: JSX.Element[];
+  }> {
     const sheet = new ServerStyleSheet()
     const originalRenderPage = ctx.renderPage
 
     try {
       ctx.renderPage = () => originalRenderPage({
-          enhanceApp: (App) => (props) =>
-            sheet.collectStyles(<App {...props} />),
-        })
-      
+        enhanceApp: (App) => (props) =>
+          sheet.collectStyles(<App {...props} />)
+      })
 
       const initialProps = await Document.getInitialProps(ctx)
       return {
@@ -20,7 +24,7 @@ export default class AppDocument extends Document {
           <>
             {initialProps.styles}
           </>
-        ),
+        )
       }
     } finally {
       sheet.seal()

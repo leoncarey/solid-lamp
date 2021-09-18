@@ -51,7 +51,11 @@ export const CheckboxWrapper = styled.div`
     }
 `
 
-export const CheckboxInput = styled.input`
+type CheckboxProps = {
+    type: 'checkbox'
+}
+
+export const CheckboxInput = styled.input<CheckboxProps>`
     box-shadow: none;
     border-color: #23d2e2;
 `

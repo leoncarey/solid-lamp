@@ -39,7 +39,7 @@ export const InputWrapper = styled.div`
 
 export const InputField = styled.input`
     background: transparent;
-    color: ${props => props.theme.inputs.colors};
+    color: ${props => props.theme.inputs.color};
     transition: border-color .2s ease-in-out;
     width: 100%;
     height: 100%;

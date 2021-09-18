@@ -1,23 +1,24 @@
 import React from 'react'
 
 import {
-    ButtonWrapper
+  ButtonWrapper
 } from './styles'
 
 type ButtonProps = {
-    type: string
+    type?: 'submit' | 'button',
+    onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
 }
 
-const Button: React.FC<ButtonProps> = ({children, ...props}) => {
-    return (
+const Button: React.FC<ButtonProps> = ({ children, ...props }) => {
+  return (
         <ButtonWrapper {...props}>
             {children}
         </ButtonWrapper>
-    )
+  )
 }
 
 Button.defaultProps = {
-    type: 'button'
+  type: 'button'
 }
 
 export default Button

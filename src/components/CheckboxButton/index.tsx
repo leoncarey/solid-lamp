@@ -1,9 +1,9 @@
 import React from 'react'
-import { FcCheckmark } from "react-icons/fc";
+import { FcCheckmark } from 'react-icons/fc'
 
 import {
-    CheckboxWrapper,
-    CheckboxInput
+  CheckboxWrapper,
+  CheckboxInput
 } from './styles'
 
 type CheckboxButtonProps = {
@@ -11,13 +11,14 @@ type CheckboxButtonProps = {
     id: string,
     name?: string,
     className?: string,
-    value?: boolean,
+    value?: string | number | readonly string[],
     display?: string,
+    type: 'checkbox',
     onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void
 }
 
-const CheckboxButton: React.FC<CheckboxButtonProps> = ({labelText, id, display, ...props}) => {
-    return (
+const CheckboxButton: React.FC<CheckboxButtonProps> = ({ labelText, id, display, ...props }) => {
+  return (
         <CheckboxWrapper className={`checkbox-${display}`}>
             <CheckboxInput type="checkbox" id={id} {...props} />
             <label htmlFor={id}>
@@ -25,11 +26,11 @@ const CheckboxButton: React.FC<CheckboxButtonProps> = ({labelText, id, display, 
                 {labelText}
             </label>
         </CheckboxWrapper>
-    )
+  )
 }
 
 CheckboxButton.defaultProps = {
-    display: 'row'
+  display: 'row'
 }
 
 export default CheckboxButton

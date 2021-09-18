@@ -1,4 +1,5 @@
-import { Provider } from "next-auth/client"
+import type { AppProps } from 'next/app'
+import { Provider } from 'next-auth/client'
 
 import { ThemeProvider } from 'styled-components'
 import GlobalStyle from '../src/styles/global'
@@ -6,9 +7,9 @@ import theme from '../src/styles/theme'
 
 import '../src/styles/fonts.css'
 
-export default function App({ Component, pageProps: { session, ...pageProps } }) {
+const App: React.FunctionComponent<AppProps> = ({ Component, pageProps: { session, ...pageProps } }) => {
   return (
-    <Provider 
+    <Provider
       options={{
         // Client Max Age controls how often the useSession in the client should
         // contact the server to sync the session state. Value in seconds.
@@ -22,7 +23,7 @@ export default function App({ Component, pageProps: { session, ...pageProps } })
         //
         // Note: If a session has expired when keep alive is triggered, all open
         // windows / tabs will be updated to reflect the user is signed out.
-        keepAlive: 0,
+        keepAlive: 0
       }}
       session={session}
     >
@@ -33,3 +34,5 @@ export default function App({ Component, pageProps: { session, ...pageProps } })
     </Provider>
   )
 }
+
+export default App

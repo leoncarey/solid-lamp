@@ -8,7 +8,7 @@ declare module 'styled-components' {
             primary: string
             secondary: string
             tertiary: string
-    
+
             black: string
             white: string
             sub_white: string
@@ -37,7 +37,7 @@ declare module 'styled-components' {
             border_primary: string,
             background_primary: string,
             color: string,
-            placeholde_color: string
+            placeholder_color: string
         }
 
         buttons: {

@@ -1,14 +1,14 @@
-import { useSession, signIn, signOut } from "next-auth/client"
+import { useSession } from 'next-auth/client'
 import type { NextPage } from 'next'
 import Head from 'next/head'
 
 import Home from '../src/pages/Home'
-import Login from '../src/pages/Login'
+import LoginPage from './login'
 
 const HomePage: NextPage = () => {
-  const { data: session } = useSession()
+  const [session] = useSession()
 
-  if(session) {
+  if (session) {
     return (
       <div>
         <Head>
@@ -21,16 +21,9 @@ const HomePage: NextPage = () => {
       </div>
     )
   }
-  return (
-    <div>
-      <Head>
-        <title>Solid Lamp - Login</title>
-        <meta name="description" content="Solid Lamp - Login" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
 
-      <Login />
-    </div>
+  return (
+    <LoginPage />
   )
 }
 

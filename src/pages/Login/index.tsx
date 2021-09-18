@@ -8,12 +8,12 @@ import FormLogin from '../../components/FormLogin'
 import * as imageLogo from '../../assets/logo-solid-lamp.png'
 
 import {
-    Container,
-    SideRight
+  Container,
+  SideRight
 } from './styles'
 
 const Login: React.FC = () => {
-    return (
+  return (
         <Container>
             <SideRight>
                 <h1>
@@ -40,7 +40,7 @@ const Login: React.FC = () => {
                 </Link>
             </SideRight>
         </Container>
-    )
+  )
 }
 
 export default Login

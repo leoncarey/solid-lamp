@@ -61,8 +61,8 @@ export const SideRight = styled.section`
         }
     }
 
-    ${ mediaComponent('mobile', `
+    ${mediaComponent('mobile', `
         width: 100%;
         padding: 0 40px;   
-   `) }
+   `)}
 `
